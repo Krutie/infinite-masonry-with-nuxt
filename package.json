@@ -1,0 +1,29 @@
+{
+  "name": "infinite-masonry-layout-with-nuxt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "deploy": "rm -rf dist && nuxt generate && cd dist && surge ./ --domain https://infinite-masonry-with-nuxt.surge.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nuxt/content": "^1.11.1",
+    "@nuxtjs/composition-api": "0.16.4",
+    "@nuxtjs/google-fonts": "^1.2.0",
+    "aos": "^2.3.4",
+    "nuxt": "2.14.9",
+    "vue-awesome": "^4.1.0",
+    "vue-infinite-loading": "^2.4.5",
+    "vue-masonry-css": "^1.0.3"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^2.1.0"
+  }
+}
