@@ -1,6 +1,11 @@
-# nuxt-components-example
+# Infinite Masonry Grid with Nuxt
 
-> Infinite masonry grid with Nuxt
+> Infinite masonry grid with Nuxt Composition API and Nuxt Content Module
+
+**Read supporting article:** [How to build Pinterest-like infinite grid in Nuxt
+](https://krutiepatel.com/blog/how-to-build-pinterest-like-infinite-grid-in-nuxt)
+
+![Project Image](/docs/images/screenshot.jpeg)
 
 ## Build Setup
 

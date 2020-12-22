@@ -18,7 +18,9 @@
     "@nuxtjs/composition-api": "0.16.4",
     "@nuxtjs/google-fonts": "^1.2.0",
     "aos": "^2.3.4",
+    "node-sass": "^5.0.0",
     "nuxt": "2.14.9",
+    "sass-loader": "^10.1.0",
     "vue-awesome": "^4.1.0",
     "vue-infinite-loading": "^2.4.5",
     "vue-masonry-css": "^1.0.3"
