@@ -11,7 +11,6 @@
     "storybook": "npx nuxt storybook",
     "deploy": "rm -rf dist && nuxt generate && cd dist && surge ./ --domain https://infinite-masonry-with-nuxt.surge.sh",
     "deploy:sb": "rm -rf storybook-static && nuxt storybook build && cd storybook-static && surge ./ --domain https://infinite-masonry-sb.surge.sh/"
-
   },
   "keywords": [],
   "author": "",
