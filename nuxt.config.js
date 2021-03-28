@@ -16,11 +16,20 @@ export default {
     ],
   },
   components: true,
+
+  storybook: {
+    port: 4000,
+    addons: ["@storybook/addon-docs"],
+    stories: ["~/components/**/*.stories.mdx"],
+    webpackFinal(config) {
+      return config;
+    },
+  },
   /*
    ** Nuxt.js modules
    ** Doc: https://nuxtjs.org/guides/configuration-glossary/configuration-modules
    */
-  modules: ["@nuxt/content"],
+  // modules: ["@nuxt/content"],
   content: {
     // Disable for security reason on CodeSandBox
     liveEdit: false,
@@ -61,6 +70,6 @@ export default {
     interval: 2000,
   },
   build: {
-    transpile: [/vue-awesome/],
+    transpile: [/^vue-awesome/],
   },
 };
