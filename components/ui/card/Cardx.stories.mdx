@@ -7,7 +7,7 @@ import CardFooter from "./CardFooter.vue";
 import CardContent from "./CardContent.vue";
 import PageSubtitle from "../typography/PageSubtitle.vue";
 
-<Meta title="Docs/Card" component={Card} parameters= {{ layout: "centered" }} argTypes={{
+<Meta title="MDX/Card" component={Card} parameters= {{ layout: "centered" }} argTypes={{
   primaryColor: { control: 'text'},
   borderRadius: {
     description: "Select border radius. (All Tailwind options applicable.)",
@@ -34,46 +34,6 @@ import PageSubtitle from "../typography/PageSubtitle.vue";
   },
   invert: { 
     table: {
-      category: "Card-Footer",
-    },
-    control: 'boolean',
-    defaultValue: true,
-  },
-  gradient: { 
-    table: {
-      category: "Card-Content",
-    },
-    control: 'boolean',
-    defaultValue: true,
-  },
-}}/>
-
-<!-- <Meta title="Docs/Card" component={Card} parameters= {{ layout: "centered" }} argTypes={{
-  primaryColor: { control: 'text'},
-  header: { 
-    control: 'boolean',
-    defaultValue: "true",
-  },
-  footer: { 
-    control: 'boolean',
-    defaultValue: "true",
-  },
-  image: {
-    table: {
-      category: "Image",
-    }, 
-    control: 'boolean',
-    defaultValue: "true",
-  },
-  invert: { 
-    table: {
-      category: "Footer",
-    },
-    control: 'boolean',
-    defaultValue: true,
-  },
-  left: { 
-    table: {
       category: "Footer",
     },
     control: 'boolean',
@@ -82,24 +42,11 @@ import PageSubtitle from "../typography/PageSubtitle.vue";
   gradient: { 
     table: {
       category: "Content",
-    }, 
-    control: 'boolean' 
-  },
-  borderRadius: {
-    control: {
-      type: "select",
-      options: ["2xl", "xlg", "lg", "md"],
     },
-    defaultValue: "xlg",
+    control: 'boolean',
+    defaultValue: true,
   },
-  borderWidth: {
-    control: {
-      type: "select",
-      options: [0, 2, 4, 8],
-    },
-    defaultValue: 2,
-  },
-}}/> -->
+}}/>
 
 <!-- # Card - Original -->
 
@@ -314,5 +261,4 @@ code={dedent`
 />
 
 <!-- ## ArgsTable 
-
 <ArgsTable of={Card} /> -->

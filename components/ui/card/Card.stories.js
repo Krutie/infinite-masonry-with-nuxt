@@ -11,7 +11,7 @@ export default {
 		layout: "centered",
 	},
 	decorators: [() => ({ template: '<div style="display: flex; align-items: center; justify-content: center;"><story /></div>' })],
-	title: "Components/Card",
+	title: "JS/Card",
 	argTypes: {
 		borderRadius: {
 			control: {
@@ -37,14 +37,14 @@ export default {
 		},
 		invert: {
 			table: {
-				category: "Card-Footer",
+				category: "Footer",
 			},
 			control: 'boolean',
 			defaultValue: true,
 		},
 		gradient: {
 			table: {
-				category: "Card-Content",
+				category: "Content",
 			},
 			control: 'boolean',
 			defaultValue: true,
