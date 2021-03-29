@@ -5,7 +5,7 @@
 **Read supporting article:** [How to build Pinterest-like infinite grid in Nuxt
 ](https://krutiepatel.com/blog/how-to-build-pinterest-like-infinite-grid-in-nuxt)
 
-![Project Image](/docs/images/screenshot.jpeg)
+![Project Image](/docs/images/screenshot.png)
 
 ## Build Setup
 
