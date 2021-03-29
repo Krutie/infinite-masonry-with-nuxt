@@ -5,11 +5,11 @@
 **Read supporting article:** [How to build Pinterest-like infinite grid in Nuxt
 ](https://krutiepatel.com/blog/how-to-build-pinterest-like-infinite-grid-in-nuxt)
 
-![Project Image](/docs/images/screenshot.jpeg)
-
 ## Storybook 
 
 **Checkout Storybook implementation:** [Nuxt Storybook](https://infinite-masonry-sb.surge.sh/)
+
+![Project Image](/docs/images/screenshot.jpeg)
 
 ## Build Setup
 
