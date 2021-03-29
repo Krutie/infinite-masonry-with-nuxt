@@ -10,12 +10,11 @@ import PageSubtitle from "../typography/PageSubtitle.vue";
 <Meta title="MDX/Card" component={Card} parameters= {{ layout: "centered" }} argTypes={{
   primaryColor: { control: 'text'},
   borderRadius: {
-    description: "Select border radius. (All Tailwind options applicable.)",
     control: {
       type: "select",
-      options: ["2xl", "xlg", "lg", "md"],
+      options: ["2xl", "3xl", "lg", "md"],
     },
-    defaultValue: "xlg",
+    defaultValue: "3xl",
   },
   borderWidth: {
     control: {
@@ -34,18 +33,28 @@ import PageSubtitle from "../typography/PageSubtitle.vue";
   },
   invert: { 
     table: {
-      category: "Footer",
+      category: "Primary",
     },
     control: 'boolean',
     defaultValue: true,
   },
   gradient: { 
     table: {
-      category: "Content",
+      category: "Gradient",
     },
     control: 'boolean',
     defaultValue: true,
   },
+  svgComponent: {
+    table: {
+      category: "SVG",
+    },
+    control: {
+      type: 'select',
+      options: ["svg-1", "svg-2", "svg-3"]
+    },
+    defaultValue: 'svg-3'
+  }
 }}/>
 
 <!-- # Card - Original -->
@@ -66,8 +75,8 @@ export const Template = (args, { argTypes }) => ({
 		:card-bg="cardBg"
 		class="w-72"
   >
-    <card-header>
-      <span class="text-green-400"> Tailwind </span>
+    <card-header v-if="header">
+      <span> Tailwind </span>
       <span> Masonry Grid </span>
     </card-header>
     <card-image src="user.png" gutter> </card-image>
@@ -76,6 +85,7 @@ export const Template = (args, { argTypes }) => ({
       <span> Nuxt </span>
     </card-header>
     <card-footer
+      v-if="footer"
       :invert="invert"
       name="CARD DESIGN PROJECT"
       category="Collection of card designs"
@@ -85,7 +95,7 @@ export const Template = (args, { argTypes }) => ({
 `
 })
 
-<!-- # Card - An SVG Approach -->
+<!-- # Card - An SVG Component -->
 
 export const TemplateSVG = (args, { argTypes }) => ({
 	components: { Card, CardContent, CardFooter },
@@ -104,7 +114,7 @@ export const TemplateSVG = (args, { argTypes }) => ({
 		class="w-72"
   >
     <card-content>
-      <svg-3 :color="primaryColor"/>
+      <components :is="svgComponent" :color="primaryColor" />
     </card-content>
     <card-footer
       :invert="invert"
@@ -148,7 +158,7 @@ export const TemplateGradient = (args, { argTypes }) => ({
 `
 })
 
-# Card - Original
+# Card - Primary
 
 <Story name="Primary" decorators={[() => ({ template: '<div style="display: flex; align-items: center; justify-content: center;"><story /></div>' })]} parameters={{ layout: "centered" }} args={{ primaryColor: "green-400", padding: 3, borderWidth: 2, invert: true }}>
   { Template.bind({})}
@@ -156,13 +166,13 @@ export const TemplateGradient = (args, { argTypes }) => ({
 
 Cards are a flexible component used to display content and actions in a variety of contexts. They are generally restricted to a single topic and it should be easy for users to scan relevant and actionable information. Content, such as images and text, should be positioned within them in a manner that demonstrates their intended hierarchy.
 
-# Card - An SVG Approach
+# Card - SVG
 
 <Story name="SVG" decorators={[() => ({ template: '<div style="display: flex; align-items: center; justify-content: center;"><story /></div>' })]} parameters={{ layout: "centered" }} args={{ primaryColor: "red-400", padding: 1, borderWidth: 2, invert: false }}>
   { TemplateSVG.bind({})}
 </Story>
 
-An SVG approach uses `card-content` component to render an SVG component. Currently, it only supports `xlg` border radius.
+This is the same `card` component that uses child component `card-content` to render an SVG component. Currently, it only supports `3xl` border radius.
 
 <Source
 language="html"
@@ -187,7 +197,7 @@ code={dedent`
 />
 
 
-# Card - With Gradient
+# Card - Gradient
 
 <Story name="Gradient" decorators={[() => ({ template: '<div style="display: flex; align-items: center; justify-content: center;"><story /></div>' })]} parameters={{ layout: "centered" }} args={{ borderRadius: "2xl", padding: 5, borderWidth: 8, gradient:true}}>
   { TemplateGradient.bind({})}

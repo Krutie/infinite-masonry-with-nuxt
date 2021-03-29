@@ -15,8 +15,7 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
     ],
   },
-  components: true,
-
+  components: ['~/components/ui/card', '~/components/ui/typography'],
   storybook: {
     port: 4000,
     addons: ["@storybook/addon-docs"],
@@ -29,7 +28,7 @@ export default {
    ** Nuxt.js modules
    ** Doc: https://nuxtjs.org/guides/configuration-glossary/configuration-modules
    */
-  // modules: ["@nuxt/content"],
+  modules: ["@nuxt/content"],
   content: {
     // Disable for security reason on CodeSandBox
     liveEdit: false,
@@ -43,6 +42,7 @@ export default {
     "@nuxtjs/google-fonts",
   ],
   tailwindcss: {
+    // jit: true,
     configPath: "~/config/tailwind.config.js",
   },
   googleFonts: {

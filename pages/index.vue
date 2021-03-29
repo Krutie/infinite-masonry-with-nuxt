@@ -6,7 +6,7 @@
         primary-color="green-400"
         secondary-color="gray-300"
         :border-width="2"
-        border-radius="xlg"
+        border-radius="3xl"
         class="w-72"
       >
         <card-header>

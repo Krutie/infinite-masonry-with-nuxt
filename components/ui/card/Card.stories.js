@@ -16,14 +16,14 @@ export default {
 		borderRadius: {
 			control: {
 				type: "select",
-				options: ["2xl", "xlg", "lg", "md"],
+				options: ["2xl", "3xl", "lg", "md"],
 			},
-			defaultValue: "xlg",
+			defaultValue: "3xl",
 		},
 		borderWidth: {
 			control: {
 				type: "select",
-				options: [0, 2, 4],
+				options: [0, 2, 4, 8],
 			},
 			defaultValue: 2,
 		},
@@ -37,18 +37,28 @@ export default {
 		},
 		invert: {
 			table: {
-				category: "Footer",
+				category: "Primary",
 			},
 			control: 'boolean',
 			defaultValue: true,
 		},
 		gradient: {
 			table: {
-				category: "Content",
+				category: "Gradient",
 			},
 			control: 'boolean',
 			defaultValue: true,
 		},
+		svgComponent: {
+			table: {
+				category: "SVG",
+			},
+			control: {
+				type: 'select',
+				options: ["svg-1", "svg-2", "svg-3"]
+			},
+			defaultValue: 'svg-3'
+		}
 	}
 };
 
@@ -65,8 +75,8 @@ const PrimaryTemplate = (args, { argTypes }) => ({
 		:card-bg="cardBg"
 		class="w-72"
   >
-    <card-header>
-      <span class="text-green-400"> Tailwind </span>
+    <card-header v-if="header">
+      <span> Tailwind </span>
       <span> Masonry Grid </span>
     </card-header>
     <card-image src="user.png" gutter> </card-image>
@@ -75,6 +85,7 @@ const PrimaryTemplate = (args, { argTypes }) => ({
       <span> Nuxt </span>
     </card-header>
     <card-footer
+			v-if="footer"
       :invert="invert"
       name="CARD DESIGN PROJECT"
       category="Collection of card designs"
@@ -106,7 +117,7 @@ const SVGTemplate = (args, { argTypes }) => ({
 		class="w-72"
   >
     <card-content>
-      <svg-1 :color="primaryColor"/>
+			<components :is="svgComponent" :color="primaryColor" />
     </card-content>
     <card-footer
       :invert="invert"
@@ -121,10 +132,11 @@ const SVGTemplate = (args, { argTypes }) => ({
 // SVG
 export const SVG = SVGTemplate.bind({});
 SVG.args = {
-	primaryColor: "red-400", 
+	primaryColor: "blue-400", 
 	padding: 1, 
 	borderWidth: 2, 
-	invert: false
+	invert: false,
+	component: "svg-2"
 };
 
 const GradientTemplate = (args, { argTypes }) => ({
