@@ -20,7 +20,8 @@
     "primaryColor": "green-400", 
     "padding": 3, 
     "borderWidth": 2, 
-    "invert": true
+    "invert": true,
+    "title": "Card Design Project"
   },
   "svg": {
     "gradient": { 
@@ -53,17 +54,13 @@
     "primaryColor": "blue-400",
 	  "padding": 1,
 	  "borderWidth": 2,
-	  "invert": false
+	  "invert": false,
+    "title": "Card Design Project"
   },
   "gradient": {
     "svgComponent": { 
       "table": { 
         "disable": true
-      }
-    },
-    "invert": { 
-      "table": { 
-          "disable": true
       }
     },
     "header": { 
@@ -86,7 +83,8 @@
     "borderRadius": "2xl",
 	  "padding": 5,
 	  "borderWidth": 8,
-	  "gradient": true
+	  "gradient": true,
+    "title": "Card Design Project"
   },
   "argtypes": {
     "borderRadius": {
@@ -98,7 +96,7 @@
     },
     "borderWidth": {
       "control": {
-        "type": "select",
+        "type": "radio",
         "options": [ 0, 2, 4, 8 ]
       },
       "defaultValue": 2
@@ -113,7 +111,7 @@
     },
     "invert": {
       "table": {
-        "category": "Primary"
+        "category": "Invert"
       },
       "control": "boolean",
       "defaultValue": true
@@ -146,6 +144,12 @@
       "defaultValue": 3
     },
     "primaryColor": { 
+      "control": "text"
+    },
+    "title": {
+      "table": {
+        "category": "Content"
+      },
       "control": "text"
     }
   }

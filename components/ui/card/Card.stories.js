@@ -16,8 +16,8 @@ export default {
 	decorators: [
 		() => ({
 			template:
-				'<div style="display: flex; align-items: center; justify-content: center;"><story /></div>',
-		}),
+				'<div style="display: flex; align-items: center; justify-content: center; height: 100vh;"><story /></div>',
+		})
 	],
 	parameters: {
 		docs: {
@@ -55,7 +55,7 @@ const PrimaryTemplate = (args, { argTypes }) => ({
     <card-footer
 			v-if="footer"
       :invert="invert"
-      name="CARD DESIGN PROJECT"
+			:name=title
       category="Collection of card designs"
     >
     </card-footer>
@@ -88,7 +88,7 @@ const SVGTemplate = (args, { argTypes }) => ({
     </card-content>
     <card-footer
       :invert="invert"
-      name="CARD DESIGN PROJECT"
+      :name=title
       category="Collection of card designs"
     >
     </card-footer>
@@ -115,10 +115,11 @@ const GradientTemplate = (args, { argTypes }) => ({
 		class="w-72"
   >
     <card-content :gradient="gradient">
-      <page-subtitle class="uppercase font-title" title="CARD DESIGN PROJECT">
+      <page-subtitle class="uppercase font-title" :title="title">
       </page-subtitle>
     </card-content>
     <card-footer
+			:invert="invert"
       class="text-gray-800"
       category="Collection of card designs"
     >
@@ -129,6 +130,10 @@ const GradientTemplate = (args, { argTypes }) => ({
 
 export const Gradient = GradientTemplate.bind({});
 Gradient.args = config.gradientargs
+
+// Also possible to add editable "title" only for selected story right here
+// Gradient.args = { ...config.gradientargs, title: "CARD DESIGN PROJECT"}
+
 Gradient.argTypes = config.gradient
 Gradient.parameters = {
 	docs: { 
@@ -136,7 +141,7 @@ Gradient.parameters = {
 			code: '`<Card> ... </Card>`'
 		},
 		description: {
-			component: "You may add readme file for Gradient Card here."
+			component: "You may add readme.md file for Gradient Card here."
 		}
 	},
 };

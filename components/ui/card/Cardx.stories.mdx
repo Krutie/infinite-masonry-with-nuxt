@@ -38,7 +38,7 @@ export const PrimaryTemplate = (args, { argTypes }) => ({
     <card-footer
       v-if="footer"
       :invert="invert"
-      name="CARD DESIGN PROJECT"
+      :name=title
       category="Collection of card designs"
     >
     </card-footer>
@@ -66,7 +66,7 @@ export const SVGTemplate = (args, { argTypes }) => ({
     </card-content>
     <card-footer
       :invert="invert"
-      name="CARD DESIGN PROJECT"
+      :name="title"
       category="Collection of card designs"
     >
     </card-footer>
@@ -90,10 +90,11 @@ export const GradientTemplate = (args, { argTypes }) => ({
 		class="w-72"
   >
     <card-content :gradient="gradient">
-      <page-subtitle class="uppercase font-title" title="CARD DESIGN PROJECT">
+      <page-subtitle class="uppercase font-title" :title=title>
       </page-subtitle>
     </card-content>
     <card-footer
+      :invert="invert"
       class="text-gray-800"
       category="Collection of card designs"
     >
