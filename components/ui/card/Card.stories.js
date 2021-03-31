@@ -5,63 +5,31 @@ import CardFooter from "./CardFooter.vue";
 import CardContent from "./CardContent.vue";
 import PageSubtitle from "../typography/PageSubtitle.vue";
 
+import readme from './docs/readme.md';
+
+import config from './docs/CardConfig.json';
+
 export default {
-	component: Card,
-	parameters: {
-		layout: "centered",
-	},
-	decorators: [() => ({ template: '<div style="display: flex; align-items: center; justify-content: center;"><story /></div>' })],
 	title: "JS/Card",
-	argTypes: {
-		borderRadius: {
-			control: {
-				type: "select",
-				options: ["2xl", "3xl", "lg", "md"],
-			},
-			defaultValue: "3xl",
+	component: Card,
+	subcomponents: { CardImage, CardHeader, CardFooter, CardContent, PageSubtitle },
+	decorators: [
+		() => ({
+			template:
+				'<div style="display: flex; align-items: center; justify-content: center;"><story /></div>',
+		}),
+	],
+	parameters: {
+		docs: {
+			description: {
+				component: readme
+			}
 		},
-		borderWidth: {
-			control: {
-				type: "select",
-				options: [0, 2, 4, 8],
-			},
-			defaultValue: 2,
-		},
-		header: {
-			control: 'boolean',
-			defaultValue: "true",
-		},
-		footer: {
-			control: 'boolean',
-			defaultValue: "true",
-		},
-		invert: {
-			table: {
-				category: "Primary",
-			},
-			control: 'boolean',
-			defaultValue: true,
-		},
-		gradient: {
-			table: {
-				category: "Gradient",
-			},
-			control: 'boolean',
-			defaultValue: true,
-		},
-		svgComponent: {
-			table: {
-				category: "SVG",
-			},
-			control: {
-				type: 'select',
-				options: ["svg-1", "svg-2", "svg-3"]
-			},
-			defaultValue: 'svg-3'
-		}
-	}
+	},
+	argTypes: config.argtypes
 };
 
+// Primary
 const PrimaryTemplate = (args, { argTypes }) => ({
 	components: { Card, CardHeader, CardFooter, CardImage },
 	props: Object.keys(argTypes),
@@ -92,17 +60,16 @@ const PrimaryTemplate = (args, { argTypes }) => ({
     >
     </card-footer>
   </card>
-`
-})
+`,
+});
 
-// Primary 
 export const Primary = PrimaryTemplate.bind({});
-Primary.args = {
-	padding: 3,
-	primaryColor: "green-400",
-};
+Primary.args = config.primaryargs
+Primary.argTypes = config.primary
+// Ref - hide controls
+// https://github.com/storybookjs/storybook/blob/next/addons/controls/README.md#how-can-i-disable-controls-for-certain-fields-on-a-particular-story 
 
-
+// SVG
 const SVGTemplate = (args, { argTypes }) => ({
 	components: { Card, CardContent, CardFooter },
 	props: Object.keys(argTypes),
@@ -126,19 +93,14 @@ const SVGTemplate = (args, { argTypes }) => ({
     >
     </card-footer>
   </card>
-`
-})
+`,
+});
 
-// SVG
 export const SVG = SVGTemplate.bind({});
-SVG.args = {
-	primaryColor: "blue-400", 
-	padding: 1, 
-	borderWidth: 2, 
-	invert: false,
-	component: "svg-2"
-};
+SVG.args = config.svgargs
+SVG.argTypes = config.svg
 
+// Gradient
 const GradientTemplate = (args, { argTypes }) => ({
 	components: { Card, CardContent, CardFooter, PageSubtitle },
 	props: Object.keys(argTypes),
@@ -162,14 +124,19 @@ const GradientTemplate = (args, { argTypes }) => ({
     >
     </card-footer>
   </card>
-`
-})
+`,
+});
 
-// Gradient
 export const Gradient = GradientTemplate.bind({});
-Gradient.args = {
-	borderRadius: "2xl", 
-	padding: 5, 
-	borderWidth: 8, 
-	gradient: true
+Gradient.args = config.gradientargs
+Gradient.argTypes = config.gradient
+Gradient.parameters = {
+	docs: { 
+		source: { 
+			code: '`<Card> ... </Card>`'
+		},
+		description: {
+			component: "You may add readme file for Gradient Card here."
+		}
+	},
 };

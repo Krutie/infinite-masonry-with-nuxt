@@ -1,0 +1,152 @@
+{
+  "primary": {
+    "gradient": { 
+      "table": { 
+        "disable": true
+      }
+    }, 
+    "svgComponent": { 
+      "table": { 
+        "disable": true
+      }
+    }, 
+    "default": { 
+      "table": { 
+        "disable": true
+      }
+    }
+  },
+  "primaryargs": {
+    "primaryColor": "green-400", 
+    "padding": 3, 
+    "borderWidth": 2, 
+    "invert": true
+  },
+  "svg": {
+    "gradient": { 
+      "table": { 
+        "disable": true
+      }
+    },
+	  "invert": { 
+      "table": { 
+        "disable": true
+      }
+    },
+	  "header": { 
+      "table": { 
+        "disable": true
+      }
+    },
+	  "footer": { 
+      "table": { 
+        "disable": true
+      }
+    },
+	  "default": { 
+      "table": { 
+        "disable": true
+      }
+    }
+  },
+  "svgargs": {
+    "primaryColor": "blue-400",
+	  "padding": 1,
+	  "borderWidth": 2,
+	  "invert": false
+  },
+  "gradient": {
+    "svgComponent": { 
+      "table": { 
+        "disable": true
+      }
+    },
+    "invert": { 
+      "table": { 
+          "disable": true
+      }
+    },
+    "header": { 
+      "table": { 
+        "disable": true
+      }
+    },
+    "footer": {
+      "table": { 
+        "disable": true
+      }
+    },
+    "default": { 
+      "table": { 
+        "disable": true
+      }
+    }
+  },
+  "gradientargs": {
+    "borderRadius": "2xl",
+	  "padding": 5,
+	  "borderWidth": 8,
+	  "gradient": true
+  },
+  "argtypes": {
+    "borderRadius": {
+      "control": {
+        "type": "select",
+        "options": [ "2xl", "3xl", "lg", "md" ]
+      },
+      "defaultValue": "3xl"
+    },
+    "borderWidth": {
+      "control": {
+        "type": "select",
+        "options": [ 0, 2, 4, 8 ]
+      },
+      "defaultValue": 2
+    },
+    "header": {
+      "control": "boolean",
+      "defaultValue": true
+    },
+    "footer": {
+      "control": "boolean",
+      "defaultValue": true
+    },
+    "invert": {
+      "table": {
+        "category": "Primary"
+      },
+      "control": "boolean",
+      "defaultValue": true
+    },
+    "gradient": {
+      "table": {
+        "category": "Gradient"
+      },
+      "control": "boolean",
+      "defaultValue": true
+    },
+    "svgComponent": {
+      "table": {
+        "category": "SVG"
+      },
+      "control": {
+        "type": "select",
+        "options": [
+              "svg-1",
+              "svg-2",
+              "svg-3"
+            ]
+          },
+      "defaultValue": "svg-3"
+    },
+    "padding": {
+      "control": {
+        "type": "number"
+      },
+      "defaultValue": 3
+    },
+    "primaryColor": { 
+      "control": "text"
+    }
+  }
+}

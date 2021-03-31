@@ -15,10 +15,10 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
     ],
   },
-  components: ['~/components/ui/card', '~/components/ui/typography'],
+  components: ['~/components/ui/card', '~/components/ui/typography', '~/components/svg'],
   storybook: {
     port: 4000,
-    addons: ["@storybook/addon-docs"],
+    // addons: ["@storybook/addon-docs"],
     stories: ["~/components/**/*.stories.mdx"],
     webpackFinal(config) {
       return config;
