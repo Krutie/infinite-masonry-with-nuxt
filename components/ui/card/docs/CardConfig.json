@@ -9,11 +9,6 @@
       "table": { 
         "disable": true
       }
-    }, 
-    "default": { 
-      "table": { 
-        "disable": true
-      }
     }
   },
   "primaryargs": {
@@ -33,21 +28,6 @@
       "table": { 
         "disable": true
       }
-    },
-	  "header": { 
-      "table": { 
-        "disable": true
-      }
-    },
-	  "footer": { 
-      "table": { 
-        "disable": true
-      }
-    },
-	  "default": { 
-      "table": { 
-        "disable": true
-      }
     }
   },
   "svgargs": {
@@ -59,21 +39,6 @@
   },
   "gradient": {
     "svgComponent": { 
-      "table": { 
-        "disable": true
-      }
-    },
-    "header": { 
-      "table": { 
-        "disable": true
-      }
-    },
-    "footer": {
-      "table": { 
-        "disable": true
-      }
-    },
-    "default": { 
       "table": { 
         "disable": true
       }
@@ -100,14 +65,6 @@
         "options": [ 0, 2, 4, 8 ]
       },
       "defaultValue": 2
-    },
-    "header": {
-      "control": "boolean",
-      "defaultValue": true
-    },
-    "footer": {
-      "control": "boolean",
-      "defaultValue": true
     },
     "invert": {
       "table": {
@@ -151,6 +108,21 @@
         "category": "Content"
       },
       "control": "text"
+    },
+    "header": {
+      "table": {
+        "disable": true
+      }
+    },
+    "footer": {
+      "table": {
+        "disable": true
+      }
+    },
+    "default": {
+      "table": {
+        "disable": true
+      }
     }
   }
 }

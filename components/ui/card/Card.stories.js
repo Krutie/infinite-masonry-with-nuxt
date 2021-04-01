@@ -43,7 +43,7 @@ const PrimaryTemplate = (args, { argTypes }) => ({
 		:card-bg="cardBg"
 		class="w-72"
   >
-    <card-header v-if="header">
+    <card-header>
       <span> Tailwind </span>
       <span> Masonry Grid </span>
     </card-header>
@@ -53,7 +53,6 @@ const PrimaryTemplate = (args, { argTypes }) => ({
       <span> Nuxt </span>
     </card-header>
     <card-footer
-			v-if="footer"
       :invert="invert"
 			:name=title
       category="Collection of card designs"
