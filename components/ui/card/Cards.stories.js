@@ -51,7 +51,13 @@ export default {
         "disable": true
       }
     }
-  }
+  },
+  decorators: [
+    () => ({
+      template:
+        '<div style="display: flex; align-items: center; justify-content: center; height: 100vh;"><story /></div>',
+    })
+  ],
 }
 
 // Define template for Primary Story
