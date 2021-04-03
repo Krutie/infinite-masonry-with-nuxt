@@ -7,16 +7,26 @@ import CardFooter from "./CardFooter.vue";
 
 export default {
   title: "JS/Card",
-  component: Card
+  component: Card,
+  args: {
+    "primaryColor": "green-400",
+    "padding": 3,
+    "borderWidth": 2,
+    "invert": true,
+    "title": "Card Design Project"
+  }
 }
 
 // Define template for Primary Story
-const PrimaryTemplate = (args) => ({
+const PrimaryTemplate = (args, { argTypes }) => ({
   components: { Card, CardHeader, CardFooter, CardImage },
+  props: Object.keys(argTypes),
   template: `
   <card
-    padding="3"
-		primary-color="green-400"
+    :padding="padding"
+		:primary-color="primaryColor"
+    :border-radius="borderRadius"
+    :border-width="borderWidth"
 		class="w-72"
   >
     <card-header>
@@ -29,8 +39,8 @@ const PrimaryTemplate = (args) => ({
       <span> Nuxt </span>
     </card-header>
     <card-footer
-      invert="true"
-			name="Card Design Project"
+      :invert="invert"
+			:name="title"
       category="Collection of card designs"
     >
     </card-footer>
