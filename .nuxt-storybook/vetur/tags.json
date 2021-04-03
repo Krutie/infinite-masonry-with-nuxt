@@ -1,0 +1,32 @@
+{
+  "Card": {
+    "description": "Auto imported from components/ui/card/Card.vue"
+  },
+  "CardContent": {
+    "description": "Auto imported from components/ui/card/CardContent.vue"
+  },
+  "CardFooter": {
+    "description": "Auto imported from components/ui/card/CardFooter.vue"
+  },
+  "CardHeader": {
+    "description": "Auto imported from components/ui/card/CardHeader.vue"
+  },
+  "CardImage": {
+    "description": "Auto imported from components/ui/card/CardImage.vue"
+  },
+  "PageSubtitle": {
+    "description": "Auto imported from components/ui/typography/PageSubtitle.vue"
+  },
+  "PageTitle": {
+    "description": "Auto imported from components/ui/typography/PageTitle.vue"
+  },
+  "Svg1": {
+    "description": "Auto imported from components/svg/Svg1.vue"
+  },
+  "Svg2": {
+    "description": "Auto imported from components/svg/Svg2.vue"
+  },
+  "Svg3": {
+    "description": "Auto imported from components/svg/Svg3.vue"
+  }
+}

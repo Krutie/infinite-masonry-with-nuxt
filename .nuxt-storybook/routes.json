@@ -1,0 +1,37 @@
+[
+  {
+    "name": "composition-api-v1",
+    "path": "/composition-api-v1",
+    "component": "/Users/krutipatel/Teach-Nuxt/infinite-masonry-layout-with-nuxt/pages/composition-api-v1.vue",
+    "chunkName": "pages/composition-api-v1",
+    "_name": "_45bf1b07"
+  },
+  {
+    "name": "composition-api-v2",
+    "path": "/composition-api-v2",
+    "component": "/Users/krutipatel/Teach-Nuxt/infinite-masonry-layout-with-nuxt/pages/composition-api-v2.vue",
+    "chunkName": "pages/composition-api-v2",
+    "_name": "_45cd3288"
+  },
+  {
+    "name": "composition-api-v3",
+    "path": "/composition-api-v3",
+    "component": "/Users/krutipatel/Teach-Nuxt/infinite-masonry-layout-with-nuxt/pages/composition-api-v3.vue",
+    "chunkName": "pages/composition-api-v3",
+    "_name": "_45db4a09"
+  },
+  {
+    "name": "regular-nuxt",
+    "path": "/regular-nuxt",
+    "component": "/Users/krutipatel/Teach-Nuxt/infinite-masonry-layout-with-nuxt/pages/regular-nuxt.vue",
+    "chunkName": "pages/regular-nuxt",
+    "_name": "_50dbce0a"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/krutipatel/Teach-Nuxt/infinite-masonry-layout-with-nuxt/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_2f07254c"
+  }
+]

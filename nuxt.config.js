@@ -17,6 +17,16 @@ export default {
   },
   components: true,
   /*
+  ** Storybook Config
+  */
+  storybook: {
+    port: 4000,
+    stories: [],
+    webpackFinal(config) {
+      return config;
+    },
+  },
+  /*
    ** Nuxt.js modules
    ** Doc: https://nuxtjs.org/guides/configuration-glossary/configuration-modules
    */

@@ -18,14 +18,18 @@
     "@nuxtjs/composition-api": "0.16.4",
     "@nuxtjs/google-fonts": "^1.2.0",
     "aos": "^2.3.4",
+    "core-js": "^3.10.0",
     "node-sass": "^5.0.0",
-    "nuxt": "2.14.9",
+    "nuxt": "^2.15.4",
     "sass-loader": "^10.1.0",
     "vue-awesome": "^4.1.0",
     "vue-infinite-loading": "^2.4.5",
     "vue-masonry-css": "^1.0.3"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^2.1.0"
+    "@nuxtjs/storybook": "^4.0.0",
+    "@nuxtjs/tailwindcss": "^4.0.3",
+    "dedent": "^0.7.0",
+    "postcss": "^8.2.9"
   }
 }
