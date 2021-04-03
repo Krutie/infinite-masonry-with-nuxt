@@ -13,7 +13,8 @@ export default {
     "padding": 3,
     "borderWidth": 2,
     "invert": true,
-    "title": "Card Design Project"
+    "title": "Card Design Project",
+    "cardBg": "gray-100"
   },
   argTypes: {
     "borderRadius": {
@@ -35,6 +36,21 @@ export default {
         "category": "Invert"
       },
     },
+    "header": {
+      "table": {
+        "disable": true
+      }
+    },
+    "footer": {
+      "table": {
+        "disable": true
+      }
+    },
+    "default": {
+      "table": {
+        "disable": true
+      }
+    }
   }
 }
 
@@ -48,6 +64,7 @@ const PrimaryTemplate = (args, { argTypes }) => ({
 		:primary-color="primaryColor"
     :border-radius="borderRadius"
     :border-width="borderWidth"
+    :card-bg="cardBg"
 		class="w-72"
   >
     <card-header>
