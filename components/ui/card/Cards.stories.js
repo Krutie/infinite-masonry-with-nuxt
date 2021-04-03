@@ -5,6 +5,9 @@ import CardImage from "./CardImage.vue";
 import CardHeader from "./CardHeader.vue";
 import CardFooter from "./CardFooter.vue";
 
+// import readme
+import readme from "./readme.md";
+
 export default {
   title: "JS/Card",
   component: Card,
@@ -58,6 +61,13 @@ export default {
         '<div style="display: flex; align-items: center; justify-content: center; height: 100vh;"><story /></div>',
     })
   ],
+  parameters: {
+    docs: {
+      description: {
+        component: readme
+      }
+    },
+  }
 }
 
 // Define template for Primary Story
