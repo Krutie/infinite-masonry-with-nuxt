@@ -11,7 +11,7 @@ export default {
 }
 
 // Define template for Primary Story
-const PrimaryTemplate = () => ({
+const PrimaryTemplate = (args) => ({
   components: { Card, CardHeader, CardFooter, CardImage },
   template: `
   <card
