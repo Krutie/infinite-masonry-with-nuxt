@@ -6,55 +6,14 @@ import CardHeader from "./CardHeader.vue";
 import CardFooter from "./CardFooter.vue";
 
 // import readme
-import readme from "./readme.md";
+import readme from "./docs/readme.md";
+import config from './docs/CardConfig.json';
 
 export default {
   title: "JS/Card",
   component: Card,
-  args: {
-    "primaryColor": "green-400",
-    "padding": 3,
-    "borderWidth": 2,
-    "invert": true,
-    "title": "Card Design Project",
-    "cardBg": "gray-100"
-  },
-  argTypes: {
-    "borderRadius": {
-      "control": {
-        "type": "select",
-        "options": ["2xl", "3xl", "lg", "md"]
-      },
-      "defaultValue": "3xl"
-    },
-    "borderWidth": {
-      "control": {
-        "type": "radio",
-        "options": [0, 2, 4, 8]
-      },
-      "defaultValue": 2
-    },
-    "invert": {
-      "table": {
-        "category": "Invert"
-      },
-    },
-    "header": {
-      "table": {
-        "disable": true
-      }
-    },
-    "footer": {
-      "table": {
-        "disable": true
-      }
-    },
-    "default": {
-      "table": {
-        "disable": true
-      }
-    }
-  },
+  args: config.component.args,
+  argTypes: config.component.argTypes,
   decorators: [
     () => ({
       template:
