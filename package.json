@@ -8,7 +8,9 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "deploy": "rm -rf dist && nuxt generate && cd dist && surge ./ --domain https://infinite-masonry-with-nuxt.surge.sh"
+    "deploy": "rm -rf dist && nuxt generate && cd dist && surge ./ --domain https://infinite-masonry-with-nuxt.surge.sh",
+    "storybook": "npx nuxt storybook",
+    "deploy:sb": "rm -rf storybook-static && nuxt storybook build && cd storybook-static && surge ./ --domain https://infinite-masonry-sb.surge.sh/"
   },
   "keywords": [],
   "author": "",
