@@ -34,6 +34,16 @@ export default {
         "options": [0, 2, 4, 8]
       },
       "defaultValue": 2
+    },
+    "invert": {
+      "table": {
+        "category": "Footer"
+      }
+    },
+    "name": {
+      "table": {
+        "category": "Footer"
+      }
     }
   }
 }
