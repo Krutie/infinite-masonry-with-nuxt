@@ -14,39 +14,39 @@ import CardContent from "./CardContent.vue";
 import PageSubtitle from "../typography/PageSubtitle.vue";
 
 // import config
-import primaryConfig from './docs/primaryConfig.json'
-import svgConfig from './docs/svgConfig.json'
-import gradientConfig from './docs/gradientConfig.json'
+import primaryConfig from "./docs/primaryConfig.json";
+import svgConfig from "./docs/svgConfig.json";
+import gradientConfig from "./docs/gradientConfig.json";
 
 // import readme
 import readme from "./docs/readme.md";
 
 // Describe card component
 export default {
-  title: "JS/Card",
-  component: Card,
-  args: primaryConfig.args,
-  argTypes: primaryConfig.argTypes,
-  decorators: [
-    () => ({
-      template:
-        '<div style="display: flex; align-items: center; justify-content: center; height: 100vh;"><story /></div>'
-    })
-  ],
-  parameters: {
-    docs: {
-      description: {
-        component: readme
-      }
-    }
-  }
-}
+	title: "JS/Card",
+	component: Card,
+	args: primaryConfig.args,
+	argTypes: primaryConfig.argTypes,
+	decorators: [
+		() => ({
+			template:
+				'<div style="display: flex; align-items: center; justify-content: center; height: 100vh;"><story /></div>',
+		}),
+	],
+	parameters: {
+		docs: {
+			description: {
+				component: readme,
+			},
+		},
+	},
+};
 
 // Define template for Primary Story
 const PrimaryTemplate = (args, { argTypes }) => ({
-  components: { Card, CardHeader, CardFooter, CardImage },
-  props: Object.keys(argTypes),
-  template: `
+	components: { Card, CardHeader, CardFooter, CardImage },
+	props: Object.keys(argTypes),
+	template: `
   <card
     :primary-color="primaryColor"
     :padding="padding"
@@ -77,13 +77,12 @@ const PrimaryTemplate = (args, { argTypes }) => ({
 // named export Primary to create respective story
 export const Primary = PrimaryTemplate.bind({});
 
-
 // SVG
 // Define template for SVG Story
 const SVGTemplate = (args, { argTypes }) => ({
-  components: { Card, CardContent, CardFooter },
-  props: Object.keys(argTypes),
-  template: `
+	components: { Card, CardContent, CardFooter },
+	props: Object.keys(argTypes),
+	template: `
   <card
     :padding="padding"
 		:primary-color="primaryColor"
@@ -110,13 +109,12 @@ export const SVG = SVGTemplate.bind({});
 SVG.args = svgConfig.args;
 SVG.argTypes = svgConfig.argTypes;
 
-
 // Gradient
 // Define template for SVG Story
 const GradientTemplate = (args, { argTypes }) => ({
-  components: { Card, CardContent, CardFooter, PageSubtitle },
-  props: Object.keys(argTypes),
-  template: `
+	components: { Card, CardContent, CardFooter, PageSubtitle },
+	props: Object.keys(argTypes),
+	template: `
 	<card
     :padding="padding"
 		:primary-color="primaryColor"

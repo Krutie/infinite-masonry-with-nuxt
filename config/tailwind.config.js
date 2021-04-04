@@ -19,7 +19,6 @@ module.exports = {
         "juicy-orange": "#f08f33",
       },
       borderRadius: {
-        xlg: "1.5rem",
         "4xl": "2rem",
       },
       spacing: {

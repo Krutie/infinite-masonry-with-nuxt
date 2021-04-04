@@ -14,7 +14,7 @@
           :primary-color="colorMap[index].bg"
           secondary-color="gray-300"
           :border-width="2"
-          border-radius="xlg"
+          border-radius="3xl"
           class="mb-5"
           data-aos="fade-up"
         >
