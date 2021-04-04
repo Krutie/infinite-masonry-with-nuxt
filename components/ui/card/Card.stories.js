@@ -10,6 +10,9 @@ import CardFooter from "./CardFooter.vue";
 // import config
 import primaryConfig from './docs/primaryConfig.json'
 
+// import readme
+import readme from "./docs/readme.md";
+
 // Describe card component
 export default {
   title: "JS/Card",
@@ -21,7 +24,14 @@ export default {
       template:
         '<div style="display: flex; align-items: center; justify-content: center; height: 100vh;"><story /></div>'
     })
-  ]
+  ],
+  parameters: {
+    docs: {
+      description: {
+        component: readme
+      }
+    }
+  }
 }
 
 // Define template for Primary Story
@@ -58,3 +68,4 @@ const PrimaryTemplate = (args, { argTypes }) => ({
 
 // named export Primary to create respective story
 export const Primary = PrimaryTemplate.bind({});
+
