@@ -1,0 +1,30 @@
+{
+  "args": {
+    "primaryColor": "blue-400",
+    "padding": 1,
+    "borderRadius": "3xl",
+    "invert": false,
+    "svgComponent": "svg-1"
+  },
+  "argTypes": {
+    "svgComponent": {
+      "table": {
+        "category": "SVG"
+      },
+      "control": {
+        "type": "select",
+        "options": [
+          "svg-1",
+          "svg-2",
+          "svg-3"
+        ]
+      },
+      "defaultValue": "svg-3"
+    },
+    "invert": {
+      "table": {
+        "disable": true
+      }
+    }
+  }
+}

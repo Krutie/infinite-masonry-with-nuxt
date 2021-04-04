@@ -7,8 +7,12 @@ import CardImage from "./CardImage.vue";
 import CardHeader from "./CardHeader.vue";
 import CardFooter from "./CardFooter.vue";
 
+// SVG Card
+import CardContent from "./CardContent.vue";
+
 // import config
 import primaryConfig from './docs/primaryConfig.json'
+import svgConfig from './docs/svgConfig.json'
 
 // import readme
 import readme from "./docs/readme.md";
@@ -69,3 +73,42 @@ const PrimaryTemplate = (args, { argTypes }) => ({
 // named export Primary to create respective story
 export const Primary = PrimaryTemplate.bind({});
 
+
+// SVG
+// Define template for SVG Story
+const SVGTemplate = (args, { argTypes }) => ({
+  components: { Card, CardContent, CardFooter },
+  props: Object.keys(argTypes),
+  template: `
+  <card
+    :padding="padding"
+		:primary-color="primaryColor"
+		:secondary-color="secondaryColor"
+		:border-width="borderWidth"
+		:border-radius="borderRadius"
+		:card-bg="cardBg"
+		class="w-72"
+  >
+    <card-content>
+			<components :is="svgComponent" :color="primaryColor" />
+    </card-content>
+    <card-footer
+      :invert="invert"
+      :name="name"
+      category="Collection of card designs"
+    >
+    </card-footer>
+  </card>
+`,
+});
+// named export Primary to create respective story
+export const SVG = SVGTemplate.bind({});
+SVG.args = svgConfig.args;
+SVG.argTypes = svgConfig.argTypes;
+
+
+// Gradient
+// Define template for SVG Story
+const GradientTemplate = () => ({})
+// named export Primary to create respective story
+export const Gradient = GradientTemplate.bind({});
