@@ -16,7 +16,9 @@ export default {
     "padding": 3,
     "borderWidth": 2,
     "borderRadius": "2xl",
-    "cardBg": "gray-100"
+    "cardBg": "gray-100",
+    "invert": true,
+    "name": "Card Design Project"
   }
 }
 
@@ -43,8 +45,8 @@ const PrimaryTemplate = (args, { argTypes }) => ({
       <span> Nuxt </span>
     </card-header>
     <card-footer
-      :invert="true"
-			name="Card Design Project"
+      :invert="invert"
+			:name="name"
       category="Collection of card designs"
     >
     </card-footer>
