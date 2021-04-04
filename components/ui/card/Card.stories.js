@@ -21,8 +21,9 @@ export default {
 }
 
 // Define template for Primary Story
-const PrimaryTemplate = (args) => ({
+const PrimaryTemplate = (args, { argTypes }) => ({
   components: { Card, CardHeader, CardFooter, CardImage },
+  props: Object.keys(argTypes),
   template: `
   <card
     :primary-color="primaryColor"
