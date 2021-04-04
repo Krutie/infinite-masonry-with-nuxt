@@ -44,6 +44,21 @@ export default {
       "table": {
         "category": "Footer"
       }
+    },
+    "header": {
+      "table": {
+        "disable": true
+      }
+    },
+    "footer": {
+      "table": {
+        "disable": true
+      }
+    },
+    "default": {
+      "table": {
+        "disable": true
+      }
     }
   }
 }
