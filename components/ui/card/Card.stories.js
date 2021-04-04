@@ -19,6 +19,22 @@ export default {
     "cardBg": "gray-100",
     "invert": true,
     "name": "Card Design Project"
+  },
+  argTypes: {
+    "borderRadius": {
+      "control": {
+        "type": "select",
+        "options": ["2xl", "3xl", "lg", "md"]
+      },
+      "defaultValue": "3xl"
+    },
+    "borderWidth": {
+      "control": {
+        "type": "radio",
+        "options": [0, 2, 4, 8]
+      },
+      "defaultValue": 2
+    }
   }
 }
 
