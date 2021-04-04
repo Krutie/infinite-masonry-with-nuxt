@@ -1,0 +1,62 @@
+{
+   "args": {
+    "primaryColor": "green-400",
+    "padding": 3,
+    "borderWidth": 2,
+    "borderRadius": "2xl",
+    "cardBg": "gray-100",
+    "invert": true,
+    "name": "Card Design Project"
+  },
+  "argTypes": {
+    "borderRadius": {
+      "control": {
+        "type": "select",
+        "options": [
+          "2xl",
+          "3xl",
+          "lg",
+          "md"
+        ]
+      },
+      "defaultValue": "3xl"
+    },
+    "borderWidth": {
+      "control": {
+        "type": "radio",
+        "options": [
+          0,
+          2,
+          4,
+          8
+        ]
+      },
+      "defaultValue": 2
+    },
+    "invert": {
+      "table": {
+        "category": "Footer"
+      }
+    },
+    "name": {
+      "table": {
+        "category": "Footer"
+      }
+    },
+    "header": {
+      "table": {
+        "disable": true
+      }
+    },
+    "footer": {
+      "table": {
+        "disable": true
+      }
+    },
+    "default": {
+      "table": {
+        "disable": true
+      }
+    }
+  }
+}
