@@ -10,9 +10,13 @@ import CardFooter from "./CardFooter.vue";
 // SVG Card
 import CardContent from "./CardContent.vue";
 
+// Gradient Card
+import PageSubtitle from "../typography/PageSubtitle.vue";
+
 // import config
 import primaryConfig from './docs/primaryConfig.json'
 import svgConfig from './docs/svgConfig.json'
+import gradientConfig from './docs/gradientConfig.json'
 
 // import readme
 import readme from "./docs/readme.md";
@@ -109,6 +113,33 @@ SVG.argTypes = svgConfig.argTypes;
 
 // Gradient
 // Define template for SVG Story
-const GradientTemplate = () => ({})
+const GradientTemplate = (args, { argTypes }) => ({
+  components: { Card, CardContent, CardFooter, PageSubtitle },
+  props: Object.keys(argTypes),
+  template: `
+	<card
+    :padding="padding"
+		:primary-color="primaryColor"
+		:secondary-color="secondaryColor"
+		:border-width="borderWidth"
+		:border-radius="borderRadius"
+		:card-bg="cardBg"
+		class="w-72"
+  >
+    <card-content :gradient="gradient">
+      <page-subtitle class="uppercase font-title" :title="name">
+      </page-subtitle>
+    </card-content>
+    <card-footer
+			:invert="invert"
+      class="text-gray-800"
+      category="Collection of card designs"
+    >
+    </card-footer>
+  </card>
+`,
+});
 // named export Primary to create respective story
 export const Gradient = GradientTemplate.bind({});
+Gradient.args = gradientConfig.args;
+Gradient.argTypes = gradientConfig.argTypes;

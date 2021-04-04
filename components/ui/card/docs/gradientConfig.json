@@ -1,0 +1,26 @@
+{
+  "args": {
+    "primaryColor": "gray-100",
+    "borderRadius": "2xl",
+    "padding": 5,
+    "borderWidth": 8,
+    "gradient": true
+  },
+  "argTypes": {
+    "name": {
+      "table": {
+        "category": "Content"
+      }
+    },
+    "gradient": {
+      "table": {
+        "category": "Gradient"
+      }
+    },
+    "invert": {
+      "table": {
+        "disable": true
+      }
+    }
+  }
+}
