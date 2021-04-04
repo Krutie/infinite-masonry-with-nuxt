@@ -4,7 +4,8 @@
     "borderRadius": "2xl",
     "padding": 5,
     "borderWidth": 8,
-    "gradient": true
+    "gradient": true,
+    "name": "Gradient Card Design"
   },
   "argTypes": {
     "name": {

@@ -1,0 +1,257 @@
+import { Meta, Story, Props, Canvas, Source, ArgsTable } from '@storybook/addon-docs/blocks';
+import dedent from "dedent"
+
+import Card from "./Card.vue";
+
+<!-- // Primary Card -->
+import CardImage from "./CardImage.vue";
+import CardHeader from "./CardHeader.vue";
+import CardFooter from "./CardFooter.vue";
+
+<!-- // SVG Card -->
+import CardContent from "./CardContent.vue";
+
+<!-- // Gradient Card -->
+import PageSubtitle from "../typography/PageSubtitle.vue";
+
+<!-- // import config -->
+import primaryConfig from './docs/primaryConfig.json'
+import svgConfig from './docs/svgConfig.json'
+import gradientConfig from './docs/gradientConfig.json'
+
+<!-- // import readme -->
+import readme from "./docs/readme.md";
+
+<Meta title="MDX/Card" 
+      component={Card} 
+      argTypes={primaryConfig.argTypes}
+      decorators={[() => ({ template: '<div style="display: flex; align-items: center; justify-content: center; height: 100vh;"><story /></div>' })]} 
+/>
+
+<!-- # Card - Original -->
+
+export const PrimaryTemplate = (args, { argTypes }) => ({
+	components: { Card, CardHeader, CardFooter, CardImage },
+	props: Object.keys(argTypes),
+	template: `
+  <card
+    :padding="padding"
+		:primary-color="primaryColor"
+		:secondary-color="secondaryColor"
+		:border-width="borderWidth"
+		:border-radius="borderRadius"
+		:card-bg="cardBg"
+		class="w-72"
+  >
+    <card-header>
+      <span> Tailwind </span>
+      <span> Masonry Grid </span>
+    </card-header>
+    <card-image src="user.png" gutter> </card-image>
+    <card-header class="text-gray-700">
+      <span> Infinite Loading </span>
+      <span> Nuxt </span>
+    </card-header>
+    <card-footer
+      :invert="invert"
+      :name="name"
+      category="Collection of card designs"
+    >
+    </card-footer>
+  </card>
+`
+})
+
+<!-- # Card - An SVG Component -->
+
+export const SVGTemplate = (args, { argTypes }) => ({
+	components: { Card, CardContent, CardFooter },
+	props: Object.keys(argTypes),
+	template: `
+  <card
+    :padding="padding"
+		:primary-color="primaryColor"
+		:secondary-color="secondaryColor"
+		:border-width="borderWidth"
+		:border-radius="borderRadius"
+		:card-bg="cardBg"
+		class="w-72"
+  >
+    <card-content>
+      <components :is="svgComponent" :color="primaryColor" />
+    </card-content>
+    <card-footer
+      :invert="invert"
+      :name="name"
+      category="Collection of card designs"
+    >
+    </card-footer>
+  </card>
+`
+})
+
+<!-- # Card - With Gradient -->
+
+export const GradientTemplate = (args, { argTypes }) => ({
+	components: { Card, CardContent, CardFooter, PageSubtitle },
+	props: Object.keys(argTypes),
+	template: `
+  <card
+    :padding="padding"
+		:primary-color="primaryColor"
+		:secondary-color="secondaryColor"
+		:border-width="borderWidth"
+		:border-radius="borderRadius"
+		:card-bg="cardBg"
+		class="w-72"
+  >
+    <card-content :gradient="gradient">
+      <page-subtitle class="uppercase font-title" :title="name">
+      </page-subtitle>
+    </card-content>
+    <card-footer
+      :invert="invert"
+      class="text-gray-800"
+      category="Collection of card designs"
+    >
+    </card-footer>
+  </card>
+`
+})
+
+
+
+<!-- STORY ONE -->
+## MDX Example
+
+# Card - Primary
+
+<Story name="Primary" 
+       args={ primaryConfig.args } 
+       argTypes = { primaryConfig.argTypes }
+>
+  { PrimaryTemplate.bind({})}
+</Story>
+
+Cards are a flexible component used to display content and actions in a variety of contexts. They are generally restricted to a single topic and it should be easy for users to scan relevant and actionable information. Content, such as images and text, should be positioned within them in a manner that demonstrates their intended hierarchy.
+
+
+
+
+<!-- STORY TWO -->
+
+# Card - SVG
+
+<Story name="SVG" 
+       parameters={{ layout: "centered" }} 
+       args={ svgConfig.args } 
+       argTypes = { svgConfig.argTypes }
+>
+  { SVGTemplate.bind({})}
+</Story>
+
+This is the same `card` component that uses child component `card-content` to render an SVG component. Currently, it only supports `3xl` border radius.
+
+<Source
+language="html"
+code={dedent`
+  <card
+    :padding="1"
+    :primary-color="red-400"
+    :border-width="2"
+    class="w-72"
+  >
+    <card-content>
+      <svg-1 :color="primaryColor"/>
+    </card-content>
+    <card-footer
+      :invert="false"
+      name="CARD DESIGN PROJECT"
+      category="Collection of card designs"
+    >
+    </card-footer>
+  </card>
+`}
+/>
+
+
+
+
+<!-- STORY THREE -->
+
+# Card - Gradient
+
+<Story name="Gradient"
+       parameters={{ layout: "centered" }} 
+       args={ gradientConfig.args } 
+       argTypes = { gradientConfig.argTypes }
+>
+  { GradientTemplate.bind({})}
+</Story>
+
+<Source
+language="html"
+code={dedent`
+	<card
+    :padding="5"
+    :border-width="8"
+    border-radius="2xl"
+    class="w-72"
+  >
+    <card-content :gradient="gradient">
+      <page-subtitle class="uppercase font-title" title="CARD DESIGN PROJECT">
+      </page-subtitle>
+    </card-content>
+    <card-footer
+      class="text-gray-800"
+      category="Collection of card designs"
+    >
+    </card-footer>
+  </card>
+`}
+/>
+
+
+### Import 
+
+```
+import { card } from 'kru-components';
+```
+
+## Props table with description and default values
+
+<Props of={Card} />
+
+
+<Source
+language="html"
+code={dedent`
+<card
+    :padding="3"
+    :primary-color="pink-400"
+     secondary-color="gray-300"
+    :border-width="2"
+    :border-radius="xlg"
+    class="w-72"
+  >
+    <card-header>
+      <span class="text-green-400"> Tailwind </span>
+      <span> Masonry Grid </span>
+    </card-header>
+    <card-image src="user.png"> </card-image>
+    <card-header class="text-gray-700">
+      <span> Infinite Loading </span>
+      <span> Nuxt </span>
+    </card-header>
+    <card-footer
+      :invert="invert"
+      name="CARD DESIGN PROJECT"
+      category="Collection of card designs"
+    >
+    </card-footer>
+  </card>
+`}
+/>
+
+<!-- ## ArgsTable 
+<ArgsTable of={Card} /> -->

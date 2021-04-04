@@ -21,7 +21,7 @@ export default {
   */
   storybook: {
     port: 4000,
-    stories: [],
+    stories: ["~/components/**/*.stories.mdx"],
     webpackFinal(config) {
       return config;
     },
