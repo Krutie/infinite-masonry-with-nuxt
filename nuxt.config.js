@@ -1,7 +1,7 @@
 export default {
   /*
    ** Deployment target
-   ** Doc: https://nuxtjs.org/guides/features/deployment-targets
+   ** Doc: https://gitlab.com/lkiseleva/http://dev.assistlab.com/.org/guides/features/deployment-targets
    */
   target: "static",
   /*
@@ -32,7 +32,7 @@ export default {
   },
   /*
    ** Nuxt.js modules
-   ** Doc: https://nuxtjs.org/guides/configuration-glossary/configuration-modules
+   ** Doc: https://nuxtjs.org/guides/configuration//../modules
    */
   modules: ["@nuxt/content"],
   content: {
