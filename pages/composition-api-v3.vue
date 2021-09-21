@@ -5,7 +5,6 @@
       In this example, we have created reusable components (Composables) with
       Composition API.
     </div>
-    <client-only>
       <masonry :cols="{ default: 3, 1000: 3, 400: 1 }" :gutter="20">
         <card
           v-for="(article, index) in items"
@@ -29,18 +28,17 @@
           </card-footer>
         </card>
       </masonry>
-    </client-only>
-    <client-only>
-      <infinite-loading @infinite="infiniteHandler">
-        <template slot="spinner">Loading...</template>
-        <div slot="no-more">
-          --- End ---
-        </div>
-        <div slot="no-results">
-          No results message
-        </div>
-      </infinite-loading>
-    </client-only>
+      <client-only>
+        <infinite-loading @infinite="infiniteHandler">
+          <template slot="spinner">Loading...</template>
+          <div slot="no-more">
+            --- End ---
+          </div>
+          <div slot="no-results">
+            No results message
+          </div>
+        </infinite-loading>
+      </client-only>
   </div>
 </template>
 <script>

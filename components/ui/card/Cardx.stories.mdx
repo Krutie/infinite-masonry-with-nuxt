@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Canvas, Source, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Props, Canvas, Source, ArgsTable, Description } from '@storybook/addon-docs/blocks';
 import dedent from "dedent"
 
 import Card from "./Card.vue";
@@ -119,8 +119,6 @@ export const GradientTemplate = (args, { argTypes }) => ({
 `
 })
 
-
-
 <!-- STORY ONE -->
 ## MDX Example
 
@@ -135,6 +133,38 @@ export const GradientTemplate = (args, { argTypes }) => ({
 
 Cards are a flexible component used to display content and actions in a variety of contexts. They are generally restricted to a single topic and it should be easy for users to scan relevant and actionable information. Content, such as images and text, should be positioned within them in a manner that demonstrates their intended hierarchy.
 
+### Custom Source for Primary card
+
+<Source
+language="html"
+code={dedent`
+  <card 
+    :padding="padding"
+    :primary-color="primaryColor"
+    :secondary-color="secondaryColor"
+    :border-width="borderWidth"
+    :border-radius="borderRadius"
+    :card-bg="cardBg"
+    class="w-72"
+  >
+    <card-header>
+      <span> Tailwind </span>
+      <span> Masonry Grid </span>
+    </card-header>
+    <card-image src="user.png" gutter> </card-image>
+    <card-header class="text-gray-700">
+      <span> Infinite Loading </span>
+      <span> Nuxt </span>
+    </card-header>
+    <card-footer
+      :invert="invert"
+      :name="name"
+      category="Collection of card designs"
+    >
+    </card-footer>
+  </card>
+`}
+/>
 
 
 
@@ -151,6 +181,8 @@ Cards are a flexible component used to display content and actions in a variety 
 </Story>
 
 This is the same `card` component that uses child component `card-content` to render an SVG component. Currently, it only supports `3xl` border radius.
+
+### Custom Source for SVG card
 
 <Source
 language="html"
@@ -189,6 +221,8 @@ code={dedent`
   { GradientTemplate.bind({})}
 </Story>
 
+### Custom Source for Gradient card
+
 <Source
 language="html"
 code={dedent`
@@ -222,6 +256,7 @@ import { card } from 'kru-components';
 
 <Props of={Card} />
 
+### Custom Source for Gradient card
 
 <Source
 language="html"
@@ -253,5 +288,35 @@ code={dedent`
 `}
 />
 
-<!-- ## ArgsTable 
-<ArgsTable of={Card} /> -->
+## ArgsTable 
+<ArgsTable of={Card} />
+
+## All three stories in a single Canvas
+
+<Canvas isColumn>
+  <Story name="rimary" 
+         args={ primaryConfig.args } 
+         argTypes = { primaryConfig.argTypes }>
+    {PrimaryTemplate.bind({})}
+  </Story>
+  <Story name="VG" 
+        args={ svgConfig.args } 
+        argTypes = { svgConfig.argTypes }>
+    {SVGTemplate.bind({})}
+  </Story>
+  <Story name="radient"
+        args={ gradientConfig.args } 
+        argTypes = { gradientConfig.argTypes }>
+    {GradientTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<!-- <Description of={Card} /> -->
+<!-- 
+<Description markdown={dedent`
+
+  ## Custom description
+
+  Insert fancy markdown here.
+
+`}/> -->

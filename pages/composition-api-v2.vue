@@ -5,7 +5,6 @@
       This is an example where you can build out entire component in a single
       file using Composition API.
     </div>
-    <client-only>
       <masonry :cols="{ default: 3, 1000: 3, 700: 2, 400: 1 }" :gutter="20">
         <card
           v-for="(article, index) in articles"
@@ -26,8 +25,6 @@
           <card-footer :name="article.title"> </card-footer>
         </card>
       </masonry>
-    </client-only>
-    <client-only>
       <infinite-loading @infinite="infiniteHandler">
         <template slot="spinner" class="text-muted small-text"
           >Loading...</template
@@ -39,7 +36,6 @@
           No results message
         </div>
       </infinite-loading>
-    </client-only>
   </div>
 </template>
 <script>

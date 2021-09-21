@@ -5,19 +5,22 @@
       This is an example of infinite-loading masonry grid built with regular
       Nuxt with options API.
     </div>
-    <client-only>
       <masonry :cols="{ default: 4, 1000: 3, 700: 2, 400: 1 }" :gutter="20">
-        <div v-for="article in articles">
-          <card
+        <div v-for="(article, i) in articles" :key="i">
+            {{ article.title }}          
+        <card
             :padding="3"
             primary-color="green-500"
             secondary-color="gray-300"
             border-radius="lg"
             class="mb-5"
-            data-aos="fade-up"
           >
             <card-header class="text-gray-500">
-              <span> <v-icon name="book-open" scale="1" /> </span>
+            <client-only>
+              <span> 
+                <v-icon name="book-open" scale="1" /> 
+              </span>
+            </client-only>
               <span> Nuxt Js </span>
             </card-header>
             <card-content>
@@ -29,8 +32,6 @@
           </card>
         </div>
       </masonry>
-    </client-only>
-    <client-only>
       <infinite-loading @infinite="infiniteHandler">
         <template slot="spinner" class="text-muted small-text"
           >Loading...</template
@@ -42,7 +43,6 @@
           No results message
         </div>
       </infinite-loading>
-    </client-only>
   </div>
 </template>
 <script>
@@ -60,6 +60,7 @@ export default {
   async fetch() {
     this.articles = await this.fetchData();
   },
+  fetchOnServer: true,
   methods: {
     fetchData() {
       return this.$content("articles")

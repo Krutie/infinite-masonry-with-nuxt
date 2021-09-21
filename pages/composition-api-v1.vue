@@ -5,9 +5,8 @@
       This is an example where all articles are fetched upfront using Nuxt
       Content module.
     </div>
-    <client-only>
       <masonry :cols="{ default: 3, 1000: 3, 700: 2, 400: 1 }" :gutter="20">
-        <div v-for="(article, index) in articles">
+        <div v-for="(article, index) in articles" :key="index">
           <card
             :padding="3"
             :border-width="2"
@@ -17,8 +16,10 @@
             class="mb-5"
           >
             <card-header class="text-gray-500">
-              <span> <v-icon name="heart" scale="1" /> </span>
-              <span> <v-icon name="link" scale="1" /> </span>
+              <client-only>
+                <span> <v-icon name="heart" scale="1" /> </span>
+                <span> <v-icon name="link" scale="1" /> </span>
+              </client-only>
             </card-header>
             <card-content>
               <card-image v-if="article.image" :src="article.image">
@@ -31,7 +32,6 @@
           </card>
         </div>
       </masonry>
-    </client-only>
   </div>
 </template>
 <script>
@@ -40,20 +40,18 @@ import {
   useContext,
   ref,
   useFetch,
+  useAsync,
   useMeta,
 } from "@nuxtjs/composition-api";
 
 export default defineComponent({
   head: {},
   setup() {
-    const articles = ref([]);
     const { $content } = useContext();
-
-    useFetch(async () => {
-      articles.value = await $content("articles")
+    const articles = useAsync(async () => await $content("articles")
         .sortBy("createdAt", "desc")
-        .fetch();
-    });
+        .fetch())
+
     useMeta({
       title: "v1 - Composition API",
       meta: [

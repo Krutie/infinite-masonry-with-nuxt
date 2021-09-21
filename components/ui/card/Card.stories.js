@@ -1,4 +1,5 @@
 // card.stories.js
+import { Meta, Story, Props, Canvas, Source, ArgsTable, Description } from '@storybook/addon-docs/blocks';
 
 import Card from "./Card.vue";
 

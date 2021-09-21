@@ -3,7 +3,7 @@ export default {
    ** Deployment target
    ** Doc: https://nuxtjs.org/guides/features/deployment-targets
    */
-  target: "static",
+   target: 'static',
   /*
    ** Headers of the page
    ** Doc: https://vue-meta.nuxtjs.org/api/#metainfo-properties
@@ -44,9 +44,14 @@ export default {
    */
   buildModules: [
     "@nuxtjs/tailwindcss",
-    "@nuxtjs/composition-api",
+    // "@nuxtjs/composition-api",
+    "@nuxtjs/composition-api/module",
     "@nuxtjs/google-fonts",
+    "@nuxtjs/pwa"
   ],
+  pwa: {
+    icon: false // disables the icon module
+  },
   tailwindcss: {
     configPath: "~/config/tailwind.config.js",
   },
@@ -62,7 +67,7 @@ export default {
    */
   plugins: [
     { src: "~/plugins/vue-awesome" },
-    { src: "~/plugins/vue-masonry-css", mode: "client" },
+    { src: "~/plugins/vue-masonry-css" },
     { src: "~/plugins/vue-infinite-loading", mode: "client" },
     { src: "~/plugins/vue-aos", mode: "client" },
   ],
