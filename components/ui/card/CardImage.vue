@@ -1,5 +1,4 @@
 <script>
-import Vue from "vue";
 export default {
     props: {
         src: {
@@ -26,8 +25,7 @@ export default {
 
         // Image tag
         let attrs = {
-            src: this.src,
-            // src: `/${this.src}`,
+            src: this.src
         };
         const sharp = this.sharp
             ? ""
